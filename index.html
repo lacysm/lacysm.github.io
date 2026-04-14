@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>警务站互动宣传终端</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 全局顶部通栏 -->
+    <div id="global-header">
+        <div class="header-left" id="current-date"></div>
+        <div class="header-center" id="theme-slogan">警务站互动科普终端</div>
+        <div class="header-right">
+            <marquee id="scrolling-marquee" scrollamount="5" behavior="scroll">
+                1.警惕电信诈骗，守住血汗钱 2.陌生来电多警惕，转账汇款先核实 3.下载国家反诈中心APP，守护财产安全 4.96110为反诈劝阻专线，请及时接听
+            </marquee>
+        </div>
+    </div>
+
+    <!-- 全局导航按钮 (非首页显示) -->
+    <div id="global-nav">
+        <button onclick="goBack()" class="nav-btn">⬅ 返回上一级</button>
+        <button onclick="goHome()" class="nav-btn">🏠 回到首页</button>
+    </div>
+
+    <!-- 主页界面 -->
+    <div id="home-page" class="page active">
+        <div class="carousel-container">
+            <div class="carousel-track" id="carousel-track">
+                <!-- 动态生成橱窗导览 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 分类详情界面 -->
+    <div id="detail-page" class="page">
+        <!-- 背景图 -->
+        <div class="page-bg" id="page-bg"></div>
+        <main id="detail-content" class="detail-container">
+            <!-- 动态注入内容 -->
+        </main>
+    </div>
+
+    <!-- 媒体放大查看模态框 (图片/视频) -->
+    <div id="media-modal" class="modal" onclick="closeModal()">
+        <button class="modal-back-btn" onclick="closeModal(event)">⬅ 返回</button>
+        <div id="modal-content" onclick="event.stopPropagation()">
+            <!-- 动态媒体注入 -->
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
